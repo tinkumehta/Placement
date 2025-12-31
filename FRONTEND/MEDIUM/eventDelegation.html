@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="itemList">
+        <ul>
+            <li>Hello</li>
+            <li>Chiku</li>
+            <li>Ram</li>
+        </ul>
+    </div>
+    <script>
+        const item = document.getElementById('#itemList li');
+
+        item.forEach(it => {
+            it.addEventListener('click', function () {
+                console.log("Clicked ", this.textContent);
+                
+            })
+        })
+
+        item.addEventListener('click', function (e) {
+            console.log("Click ", e.target.value);   
+        })
+    </script>
+</body>
+</html>

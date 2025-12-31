@@ -1,7 +1,7 @@
 # Placement
 
-What is JavaScript and its common uses? 
-A high-level programming language used to create interactive effects in web browsers.
+## What is JavaScript and its common uses? 
+ A high-level programming language used to create interactive effects in web browsers.
 Commonly used for developing both web and mobile applications
 
 What are template literals in JavaScript? 
@@ -45,7 +45,7 @@ Determines the data type of a given value or variable and returns a string repre
 
 Purpose of the map method in JavaScript. 
 Used to create a new array by applying a specified function to each element of an existing array .
-Crucially, it does not modify the original array .
+Crucially, it does not modify the original array . 
 
 Explain event bubbling and event capturing. 
 Event Bubbling: Events are handled from the innermost element to the outermost element (bottom-up propagation) .
@@ -64,27 +64,84 @@ A closure is when an inner function has access to the outer (enclosing) function
 They are often used to create private variables in JavaScript, as there's no official way to declare private variables within objects .
 
 How do setTimeout and setInterval work? 
-Both are part of Web APIs (provided by browser/Node.js) and are used to schedule tasks to run after a specific amount of time (30:21:00-30:39:00).
-setTimeout: Executes a function once after a specified delay (30:42:00-31:53:00).
-setInterval: Executes a function repeatedly at specified intervals (30:59:00-31:10:00, 32:34:00-33:20:00).
-clearInterval can be used to stop setInterval from running, and setTimeout can be combined with setInterval to clear intervals after a certain duration (31:57:00-32:31:00, 34:10:00-35:17:00).
-Describe promises in JavaScript. (0:35:25)
-Promises handle asynchronous tasks in JavaScript, providing a more readable and structured approach than callbacks (35:25:00-35:42:00).
-They ensure that code can handle success or failure outcomes gracefully, preventing crashes (35:50:00-36:19:00).
+Both are part of Web APIs (provided by browser/Node.js) and are used to schedule tasks to run after a specific amount of time .
+setTimeout: Executes a function once after a specified delay .
+setInterval: Executes a function repeatedly at specified intervals .
+clearInterval can be used to stop setInterval from running, and setTimeout can be combined with setInterval to clear intervals after a certain duration .
+
+Describe promises in JavaScript. 
+Promises handle asynchronous tasks in JavaScript, providing a more readable and structured approach than callbacks .
+They ensure that code can handle success or failure outcomes gracefully, preventing crashes .
 Have three states:
-Pending: Initial state, neither fulfilled nor rejected (36:21:00-36:30:00).
-Fulfilled: The asynchronous operation completed successfully (36:30:00-36:37:00).
-Rejected: The asynchronous operation failed (36:37:00-36:41:00).
-then() is used for successful outcomes, and catch() for handling errors (37:53:00-38:41:00).
-Use of async and await in JavaScript. (0:39:05)
-async is used to declare an asynchronous function, which implicitly returns a Promise (39:19:00-39:31:00).
-await is used inside an async function to pause the execution of the function until a Promise is resolved (39:31:00-39:38:00).
-They make asynchronous code look and behave more like synchronous code, improving readability and maintainability (39:40:00-40:14:00).
-Difference between call, apply, and bind. (0:42:57)
-These methods are used to explicitly control the this context of a function and pass arguments (43:01:00-43:10:00, 49:30:00-49:55:00).
-call: Invokes the function immediately. Arguments are passed one by one (43:11:00-45:56:00, 46:05:00-46:11:00).
-apply: Invokes the function immediately. Arguments are passed as an array (46:14:00-47:00:00, 47:03:00-47:13:00).
-bind: Returns a new function with the this context and arguments pre-set, but does not invoke it immediately. The new function must be called explicitly later (47:21:00-49:08:00).
-What is event delegation? (0:50:01)
-A technique for managing events efficiently by placing a single event listener on a common parent element instead of on each individual child element (50:04:00-50:17:00).
+Pending: Initial state, neither fulfilled nor rejected .
+Fulfilled: The asynchronous operation completed successfully .
+Rejected: The asynchronous operation failed .
+then() is used for successful outcomes, and catch() for handling errors .
+
+Use of async and await in JavaScript. 
+async is used to declare an asynchronous function, which implicitly returns a Promise .
+await is used inside an async function to pause the execution of the function until a Promise is resolved .
+They make asynchronous code look and behave more like synchronous code, improving readability and maintainability .
+Difference between call, apply, and bind. 
+These methods are used to explicitly control the this context of a function and pass arguments.
+call: Invokes the function immediately. Arguments are passed one by one .
+apply: Invokes the function immediately. Arguments are passed as an array .
+bind: Returns a new function with the this context and arguments pre-set, but does not invoke it immediately. The new function must be called explicitly later .
+
+20)  What is event delegation? 
+A technique for managing events efficiently by placing a single event listener on a common parent element instead of on each individual child element  .
 It utilizes the event bubbling capability, where events from child elements propagate up to their parent.
+
+Explain the Event Loop in JavaScript 
+
+The event loop is a fundamental concept that enables JavaScript to perform non-blocking I/O operations despite being single-threaded.
+It continuously checks if the call stack is empty. If it is, it moves functions from the message queue (or task queue) to the call stack for execution.
+This mechanism allows asynchronous operations (like setTimeout, setInterval, Promises, network requests) to be handled without freezing the main thread.
+Difference between Promises and Async/Await 
+
+Both are used for handling asynchronous operations in JavaScript.
+Promises (0:59:58): Provide a more structured way to handle asynchronous results (success or failure) compared to traditional callbacks. They have states: pending, fulfilled, and rejected.
+Async/Await (1:00:23): Built on top of Promises, async functions always return a Promise. The await keyword pauses the execution of an async function until the Promise it's waiting for is resolved or rejected, making asynchronous code look and behave more like synchronous code, improving readability and maintainability.
+Purpose of the reduce Method in Arrays
+
+The reduce method executes a reducer function (provided by you) on each element of the array, resulting in a single output value.
+It's used to aggregate or condense array elements into a single value, such as summing all numbers, flattening an array of arrays, or counting occurrences of items.
+The reducer function takes an accumulator and the current value as arguments, and optionally the current index and the array itself.
+
+24) Explain Currying in JavaScript 
+
+Currying is a technique where a function that takes multiple arguments is transformed into a sequence of functions, each taking a single argument.
+It allows for partial application of arguments, creating new functions with some arguments already filled in.
+This can make functions more reusable and composable.
+What is a Generator Function and its Usage? (1:12:42)
+
+A generator function is a special type of function that can be paused and resumed, allowing it to produce a sequence of values over time.
+They are defined using function* syntax and use the yield keyword to pause execution and return a value. When called again, they resume from where they left off.
+Usage: Useful for iterating over large datasets, implementing custom iterators, handling asynchronous operations, and managing state in a more memory-efficient way.
+What are Weak Maps and Weak Sets in JavaScript? (1:15:57)
+
+WeakMap (1:16:09): A collection of key/value pairs where keys are weakly referenced objects. If there are no other references to the key object, it can be garbage-collected, and the entry is removed from the WeakMap.
+WeakSet (1:17:15): A collection of weakly referenced objects. Similar to WeakMap, if an object in a WeakSet is no longer referenced anywhere else, it can be garbage-collected.
+Key difference from Map/Set: They don't prevent garbage collection of their keys/values, making them suitable for scenarios where you want to associate data with objects without preventing those objects from being collected when they are no longer in use.
+How does JavaScript Handle Memory Management? (1:19:39)
+
+JavaScript uses automatic memory management, primarily through a process called garbage collection.
+When an object is created, memory is allocated. When an object is no longer "reachable" (meaning no active references point to it), the garbage collector automatically reclaims the memory.
+This relieves developers from manual memory allocation and deallocation, reducing memory-related bugs.
+Difference between Shallow and Deep Copying (1:21:25)
+
+Shallow Copy (1:21:35): Creates a new object/array, but it only copies the references to the nested objects or arrays. Changes to nested elements in the copy will affect the original, and vice versa.
+Deep Copy (1:22:42): Creates a completely independent copy of the original object/array, including all nested objects and arrays. Changes in the deep copy will not affect the original, and vice versa.
+Common methods for shallow copy include Object.assign(), spread syntax (...), and Array.prototype.slice(). Deep copying often requires JSON methods (JSON.parse(JSON.stringify(obj))) or external libraries for complex objects.
+What is Strict Mode in JavaScript and how is it Enabled? (1:25:57)
+
+Strict Mode is a way to opt into a restricted variant of JavaScript, which fixes some of JavaScript's problematic "bad parts" and provides more robust error-checking.
+It helps write safer and more reliable code by:
+Converting common coding mistakes into errors (e.g., assigning to undeclared variables).
+Disallowing "unsafe" actions (e.g., gaining access to the global object).
+Throwing errors for features that are problematic or poorly designed.
+Enabled by: Placing the string "use strict"; at the beginning of a script or a function.
+Observer Pattern and its Relation to JavaScript (1:32:47)
+
+The Observer pattern is a behavioral design pattern where an object (the "subject" or "observable") maintains a list of its dependents (the "observers") and notifies them automatically of any state changes, usually by calling one of their methods.
+Relation to JavaScript: It's widely used in JavaScript, especially in event handling, reactive programming (e.g., RxJS), and UI frameworks. The DOM event system itself is an example of the observer pattern, where elements are subjects and event listeners are observers.
