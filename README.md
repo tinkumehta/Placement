@@ -113,26 +113,29 @@ The reducer function takes an accumulator and the current value as arguments, an
 Currying is a technique where a function that takes multiple arguments is transformed into a sequence of functions, each taking a single argument.
 It allows for partial application of arguments, creating new functions with some arguments already filled in.
 This can make functions more reusable and composable.
-What is a Generator Function and its Usage? (1:12:42)
+
+25) What is a Generator Function and its Usage? (1:12:42)
 
 A generator function is a special type of function that can be paused and resumed, allowing it to produce a sequence of values over time.
 They are defined using function* syntax and use the yield keyword to pause execution and return a value. When called again, they resume from where they left off.
 Usage: Useful for iterating over large datasets, implementing custom iterators, handling asynchronous operations, and managing state in a more memory-efficient way.
-What are Weak Maps and Weak Sets in JavaScript? (1:15:57)
+
+26)  What are Weak Maps and Weak Sets in JavaScript?
 
 WeakMap (1:16:09): A collection of key/value pairs where keys are weakly referenced objects. If there are no other references to the key object, it can be garbage-collected, and the entry is removed from the WeakMap.
 WeakSet (1:17:15): A collection of weakly referenced objects. Similar to WeakMap, if an object in a WeakSet is no longer referenced anywhere else, it can be garbage-collected.
 Key difference from Map/Set: They don't prevent garbage collection of their keys/values, making them suitable for scenarios where you want to associate data with objects without preventing those objects from being collected when they are no longer in use.
-How does JavaScript Handle Memory Management? (1:19:39)
 
+How does JavaScript Handle Memory Management?
 JavaScript uses automatic memory management, primarily through a process called garbage collection.
 When an object is created, memory is allocated. When an object is no longer "reachable" (meaning no active references point to it), the garbage collector automatically reclaims the memory.
 This relieves developers from manual memory allocation and deallocation, reducing memory-related bugs.
-Difference between Shallow and Deep Copying (1:21:25)
 
-Shallow Copy (1:21:35): Creates a new object/array, but it only copies the references to the nested objects or arrays. Changes to nested elements in the copy will affect the original, and vice versa.
-Deep Copy (1:22:42): Creates a completely independent copy of the original object/array, including all nested objects and arrays. Changes in the deep copy will not affect the original, and vice versa.
+Difference between Shallow and Deep Copying.
+Shallow Copy : Creates a new object/array, but it only copies the references to the nested objects or arrays. Changes to nested elements in the copy will affect the original, and vice versa.
+Deep Copy : Creates a completely independent copy of the original object/array, including all nested objects and arrays. Changes in the deep copy will not affect the original, and vice versa.
 Common methods for shallow copy include Object.assign(), spread syntax (...), and Array.prototype.slice(). Deep copying often requires JSON methods (JSON.parse(JSON.stringify(obj))) or external libraries for complex objects.
+
 What is Strict Mode in JavaScript and how is it Enabled? (1:25:57)
 
 Strict Mode is a way to opt into a restricted variant of JavaScript, which fixes some of JavaScript's problematic "bad parts" and provides more robust error-checking.
@@ -141,6 +144,7 @@ Converting common coding mistakes into errors (e.g., assigning to undeclared var
 Disallowing "unsafe" actions (e.g., gaining access to the global object).
 Throwing errors for features that are problematic or poorly designed.
 Enabled by: Placing the string "use strict"; at the beginning of a script or a function.
+
 Observer Pattern and its Relation to JavaScript (1:32:47)
 
 The Observer pattern is a behavioral design pattern where an object (the "subject" or "observable") maintains a list of its dependents (the "observers") and notifies them automatically of any state changes, usually by calling one of their methods.
